@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "servor --reload",
-    "build": "echo 'Build complete - static files ready for deployment'"
+    "build": "mkdir -p dist && cp index.html styles.css script.js dist/ && cp -r images dist/"
   },
   "dependencies": {
     "servor": "^4.0.2"
