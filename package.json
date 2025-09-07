@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "servor --reload"
+    "start": "servor --reload",
+    "build": "echo 'Build complete - static files ready for deployment'"
   },
   "dependencies": {
     "servor": "^4.0.2"
