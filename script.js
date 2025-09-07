@@ -163,3 +163,20 @@ const animateCounters = () => {
 
 // Initialize counter animation
 document.addEventListener('DOMContentLoaded', animateCounters);
+// Function to download membership form
+function downloadMembershipForm() {
+    const link = document.createElement('a');
+    link.href = 'http://rotaryclubofiponri.org/wp-content/uploads/2025/09/Rotary_Club_of_Iponri_Membership_Questionnaire.docx';
+    link.download = 'Rotary_Club_of_Iponri_Membership_Questionnaire.docx';
+    link.target = '_blank';
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Fallback: if download doesn't work, open in new tab
+    setTimeout(() => {
+        window.open('http://rotaryclubofiponri.org/wp-content/uploads/2025/09/Rotary_Club_of_Iponri_Membership_Questionnaire.docx', '_blank');
+    }, 100);
+}
