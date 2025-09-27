@@ -963,4 +963,17 @@ section {
     .contact-form {
         padding: 25px 15px;
     }
+    
+    .gallery-item {
+        flex: 0 0 100%;
+    }
+    
+    .gallery-nav {
+        padding: 0 10px;
+    }
+    
+    .gallery-nav-btn {
+        width: 40px;
+        height: 40px;
+    }
 }

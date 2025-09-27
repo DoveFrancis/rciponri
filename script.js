@@ -171,6 +171,76 @@ const animateCounters = () => {
 // Initialize counter animation
 document.addEventListener('DOMContentLoaded', animateCounters);
 
+// Gallery carousel functionality
+let currentGalleryIndex = 0;
+const itemsPerView = 3; // Show 3 images at a time
+const totalItems = 12; // Total number of gallery items
+const maxIndex = Math.ceil(totalItems / itemsPerView) - 1;
+
+function moveGallery(direction) {
+    const track = document.getElementById('galleryTrack');
+    const prevBtn = document.querySelector('.gallery-nav-btn.prev');
+    const nextBtn = document.querySelector('.gallery-nav-btn.next');
+    
+    currentGalleryIndex += direction;
+    
+    // Boundary checks
+    if (currentGalleryIndex < 0) {
+        currentGalleryIndex = 0;
+    } else if (currentGalleryIndex > maxIndex) {
+        currentGalleryIndex = maxIndex;
+    }
+    
+    // Calculate transform
+    const translateX = -(currentGalleryIndex * 100);
+    track.style.transform = `translateX(${translateX}%)`;
+    
+    // Update button states
+    prevBtn.disabled = currentGalleryIndex === 0;
+    nextBtn.disabled = currentGalleryIndex === maxIndex;
+    
+    // Update dots
+    updateGalleryDots();
+}
+
+function updateGalleryDots() {
+    const dotsContainer = document.getElementById('galleryDots');
+    dotsContainer.innerHTML = '';
+    
+    for (let i = 0; i <= maxIndex; i++) {
+        const dot = document.createElement('div');
+        dot.className = `gallery-dot ${i === currentGalleryIndex ? 'active' : ''}`;
+        dot.onclick = () => goToGallerySlide(i);
+        dotsContainer.appendChild(dot);
+    }
+}
+
+function goToGallerySlide(index) {
+    const track = document.getElementById('galleryTrack');
+    const prevBtn = document.querySelector('.gallery-nav-btn.prev');
+    const nextBtn = document.querySelector('.gallery-nav-btn.next');
+    
+    currentGalleryIndex = index;
+    
+    const translateX = -(currentGalleryIndex * 100);
+    track.style.transform = `translateX(${translateX}%)`;
+    
+    // Update button states
+    prevBtn.disabled = currentGalleryIndex === 0;
+    nextBtn.disabled = currentGalleryIndex === maxIndex;
+    
+    updateGalleryDots();
+}
+
+// Initialize gallery on page load
+document.addEventListener('DOMContentLoaded', () => {
+    updateGalleryDots();
+    const prevBtn = document.querySelector('.gallery-nav-btn.prev');
+    if (prevBtn) {
+        prevBtn.disabled = true; // Start with prev button disabled
+    }
+});
+
 // Gallery functionality
 let currentImageIndex = 0;
 const galleryImages = [
