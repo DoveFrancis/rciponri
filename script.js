@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', animateCounters);
 
 // Gallery carousel functionality
 let currentGalleryIndex = 0;
-const itemsPerView = 3; // Show 3 images at a time
+const itemsPerView = 2; // Show 2 images at a time
 const totalItems = 8; // Total number of gallery items
 const maxIndex = Math.ceil(totalItems / itemsPerView) - 1;
 
