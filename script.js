@@ -170,3 +170,73 @@ const animateCounters = () => {
 
 // Initialize counter animation
 document.addEventListener('DOMContentLoaded', animateCounters);
+
+// Gallery functionality
+let currentImageIndex = 0;
+const galleryImages = [
+    'images/vibrant.jpeg',
+    'images/members.jpeg',
+    'images/Basic.jpeg',
+    'images/birthing.jpeg',
+    'images/WASH.jpeg',
+    'images/microcredit.jpeg',
+    'images/tree.jpeg',
+    'images/disease.jpeg',
+    'images/Ademola.jpeg',
+    'images/Bayo.jpeg',
+    'images/Kelvin.jpg',
+    'images/Jerry.jpeg'
+];
+
+function openModal(imageSrc) {
+    const modal = document.getElementById('galleryModal');
+    const modalImage = document.getElementById('modalImage');
+    
+    currentImageIndex = galleryImages.indexOf(imageSrc);
+    modalImage.src = imageSrc;
+    modal.style.display = 'block';
+    
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('galleryModal');
+    modal.style.display = 'none';
+    
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = galleryImages[currentImageIndex];
+}
+
+function previousImage() {
+    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = galleryImages[currentImageIndex];
+}
+
+// Close modal when clicking outside the image
+document.getElementById('galleryModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+
+// Keyboard navigation for gallery
+document.addEventListener('keydown', function(e) {
+    const modal = document.getElementById('galleryModal');
+    if (modal.style.display === 'block') {
+        if (e.key === 'Escape') {
+            closeModal();
+        } else if (e.key === 'ArrowRight') {
+            nextImage();
+        } else if (e.key === 'ArrowLeft') {
+            previousImage();
+        }
+    }
+});

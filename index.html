@@ -23,6 +23,7 @@
                         <li><a href="#leadership">Leadership</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#events">Events</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#membership">Membership</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -360,6 +361,106 @@ Club within the District.</p>
             </div>
         </div>
     </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Photo Gallery</h2>
+                <p>Moments from our events, projects, and community service activities</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('images/vibrant.jpeg')">
+                    <img src="images/vibrant.jpeg" alt="Rotary Members">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/members.jpeg')">
+                    <img src="images/members.jpeg" alt="Club Meeting">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/Basic.jpeg')">
+                    <img src="images/Basic.jpeg" alt="Education Project">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/birthing.jpeg')">
+                    <img src="images/birthing.jpeg" alt="Healthcare Project">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/WASH.jpeg')">
+                    <img src="images/WASH.jpeg" alt="WASH Project">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/microcredit.jpeg')">
+                    <img src="images/microcredit.jpeg" alt="Economic Development">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/tree.jpeg')">
+                    <img src="images/tree.jpeg" alt="Environment Project">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/disease.jpeg')">
+                    <img src="images/disease.jpeg" alt="Disease Prevention">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/Ademola.jpeg')">
+                    <img src="images/Ademola.jpeg" alt="President Ademola">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/Bayo.jpeg')">
+                    <img src="images/Bayo.jpeg" alt="PAG Bayo">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/Kelvin.jpg')">
+                    <img src="images/Kelvin.jpg" alt="Secretary Kelvin">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('images/Jerry.jpeg')">
+                    <img src="images/Jerry.jpeg" alt="PP Jerry">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-nav">
+                <button class="nav-btn prev-btn" onclick="previousImage()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn" onclick="nextImage()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Membership Section -->
     <section class="membership" id="membership">
