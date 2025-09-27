@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', animateCounters);
 // Gallery carousel functionality
 let currentGalleryIndex = 0;
 const itemsPerView = 3; // Show 3 images at a time
-const totalItems = 12; // Total number of gallery items
+const totalItems = 8; // Total number of gallery items
 const maxIndex = Math.ceil(totalItems / itemsPerView) - 1;
 
 function moveGallery(direction) {
@@ -251,11 +251,7 @@ const galleryImages = [
     'images/WASH.jpeg',
     'images/microcredit.jpeg',
     'images/tree.jpeg',
-    'images/disease.jpeg',
-    'images/Ademola.jpeg',
-    'images/Bayo.jpeg',
-    'images/Kelvin.jpg',
-    'images/Jerry.jpeg'
+    'images/disease.jpeg'
 ];
 
 function openModal(imageSrc) {
